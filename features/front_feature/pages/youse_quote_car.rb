@@ -42,7 +42,6 @@ class Youse_quote_car < SitePrism::Page
 			date = Faker::Date.birthday(min_age=18,max_age=50).strftime("%d/%m/%Y")
 			self.click_select_car.click
 			self.click_select_car.find(:xpath, '//*[@id="auto_order_flow_pricing_requirements_vehicle_attributes_make"]/option[9]').select_option
-			#page.find(:css, '#auto_order_flow_pricing_requirements_vehicle_attributes_make').find(:xpath, '//*[@id="auto_order_flow_pricing_requirements_vehicle_attributes_make"]/option[9]').select_option
 			self.select_model_car.click
 			self.select_model_car.select 'CLIO'
 			self.select_year_car.click
