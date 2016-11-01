@@ -26,6 +26,8 @@ end
 Capybara.default_driver = :selenium_chrome
 Capybara.page.driver.browser.manage.window.maximize
 Capybara.javascript_driver = :chrome
+window = Capybara.current_session.driver.browser.manage.window
+window.resize_to(1260, 800)
 
 
 
