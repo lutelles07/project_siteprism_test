@@ -2,6 +2,7 @@ Feature: Consult insurance quote car
   As user of the insurer's site
   I want to make a quote of car insurance
 
+  @test
   Scenario: Consult insurance quote car
   	When I visit the site of youse
   	And click on the auto insurance option

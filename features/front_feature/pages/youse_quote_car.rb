@@ -2,7 +2,8 @@ class Youse_quote_car < SitePrism::Page
 		set_url ENVIRONMENT['site_youse']
 
 		element :auto_insurance, :xpath, '//*[@id="container"]/div[1]/header/section/div/div/nav/ul/li[3]/a'
-		element :button_I_want_to_quote, :xpath, '//*[@id="container"]/div[2]/header/section/div/div[2]/a'
+		element :button_I_want_to_quote, :xpath, '//*[@id="container"]/div[1]/div[2]/section[1]/div/div/div/a'
+												  
 		element :lead_person, 'input#auto_order_flow_lead_person_data_lead_person_attributes_name'
 		element :input_fone, 'input#auto_order_flow_lead_person_data_lead_person_attributes_phone'
 		element :input_email, 'input#auto_order_flow_lead_person_data_lead_person_attributes_email'
@@ -38,11 +39,11 @@ class Youse_quote_car < SitePrism::Page
 
 		def selecionar_dados_do_carro
 			self.click_select_car.click
-			self.click_select_car.select 'AUDI'
+			self.click_select_car.select('RENAULT').first
 			self.select_model_car.click
-			self.select_model_car.select 'A1'
+			self.select_model_car.select 'CLIO'
 			self.select_year_car.click
-			self.select_year_car.select '2011'
+			self.select_year_car.select '2016'
 			self.select_versin.click
 			self.select_versin.select 'A1 1.4 TFSI 122CV S-TRONIC 3P (Gasolina)'
 			self.input_cep_car.click

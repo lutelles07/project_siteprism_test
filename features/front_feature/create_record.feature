@@ -2,7 +2,7 @@ Feature: Create a record
   I want to accomplish as a registered User
   To have a record in youse insurer
 
-  @done
+  @done 
   Scenario: Create a record
     When I visit the site of youse
     And I click my account

@@ -6,8 +6,9 @@ class Youse_record < SitePrism::Page
 		element :input_name, '#user_name'
 		element :input_email, '#user_email'
 		element :input_password, '#user_password'
-		element :confirm_password, :xpath, '//*[@id="new_user"]/fieldset[4]'
-		element :click_button_send_registration, '.button.button-highlight button--centered'
+		#element :confirm_password, :xpath, '//*[@id="new_user"]/fieldset[4]'
+		element :confirm_password, '#user_password_confirmation'
+		element :click_button_send_registration, '.button.button-highlight.button--centered'
 
 		def clicar_minha_conta
 			self.my_account.click
@@ -20,11 +21,11 @@ class Youse_record < SitePrism::Page
 		def cadastrar_usuario
 			name = Faker::Name.name
       		email = Faker::Internet.email
-      		input_senha = senha = Faker::Number.number(6)
+      		@response = @senha = Faker::Number.number(8)
 			self.input_name.set name
 			self.input_email.set email
-			self.input_password.set senha
-			self.confirm_password.set senha
+			self.input_password.set @senha
+			self.confirm_password.set @senha
 		end
 
 		def clicar_botao_enviar_registro
